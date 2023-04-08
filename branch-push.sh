@@ -2,7 +2,7 @@
 
 # check for uncommit changes
 if [[ $(git status --porcelain) ]];
-  then
+	then
 echo "There are uncommitted changes. Please commit or stash them before switching to the main branch."
 git pull
 git add .
@@ -34,14 +34,14 @@ fi
 #read comments
 #git commit -m "$comments "
 
-echo type your branch name
-read branchname
-
-if [[ !$branchname=~^[a-zA-Z0-9_-]+$ ]];
-	then
-echo "Invalid branch name. Please use only letters, numbers, hyphens, or underscores."
- exit 1
-fi
+while true; do
+    read -p "Enter branch name: " branchname
+    if [[ ! $branchname =~ ^[a-zA-Z0-9_-]+[a-zA-Z]$ ]]; then
+        echo "Invalid branch name. Please use only letters, numbers, hyphens, or underscores and end with a letter."
+    else
+        break
+    fi
+done
 
 git checkout -b $branchname
 if [[ $?-eq0 ]];
