@@ -7,7 +7,7 @@ git branch -d $branchDelete
 
 echo deleted local branch 
 
-git push origin $branchDelete
+git push origin --delete $branchDelete
 
 git pull 
 
