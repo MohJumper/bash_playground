@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 echo type local branch to delete: 
-read $branchDelete
+read branchDelete
 
 git branch -d $branchDelete
 
