@@ -45,5 +45,6 @@ else
  exit 1
 fi 
 git checkout main
-
-echo Back to main ... go to GitHub for PR
+echo you are on main ... go to GitHub for PR
+echo ---------------------------------------
+echo if you completed PR remember to git pull 
